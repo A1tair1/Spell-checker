@@ -1,4 +1,4 @@
-#Spell checker
+# Spell checker
 
 Your goal is to implement a spelling checker. You should correct words by finding words in the dictionary that are no more than two edits away from the input.
 
@@ -21,7 +21,7 @@ As output, you should print the text lines with whitespace intact,with the follo
 
 Don't forget that dictionary and text size might be big enough to raise perforance issues.
 
-##Example
+## Example
 
 Input | Output
 :-|:-
