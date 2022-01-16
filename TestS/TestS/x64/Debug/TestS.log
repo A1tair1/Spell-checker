@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\Артем\source\repos\TestS\TestS\Source.cpp(35,26): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Артем\source\repos\TestS\TestS\Source.cpp(36,26): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Артем\source\repos\TestS\TestS\Source.cpp(37,57): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  TestS.vcxproj -> C:\Users\Артем\source\repos\TestS\x64\Debug\TestS.exe
