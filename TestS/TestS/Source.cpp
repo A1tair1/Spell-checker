@@ -20,7 +20,7 @@ void get_input(vector<string>& source)
     } while (1);
 }
 
-int get_letter(string &str, int n) // Безопасное получение буквы, нечуствительное к регистру.
+int get_letter(string &str, int n) // ГЃГҐГ§Г®ГЇГ Г±Г­Г®ГҐ ГЇГ®Г«ГіГ·ГҐГ­ГЁГҐ ГЎГіГЄГўГ», Г­ГҐГ·ГіГ±ГІГўГЁГІГҐГ«ГјГ­Г®ГҐ ГЄ Г°ГҐГЈГЁГ±ГІГ°Гі.
 {
     if (n < str.size())
         return toupper(str[n]);
@@ -28,7 +28,7 @@ int get_letter(string &str, int n) // Безопасное получение буквы, нечуствительно
         return -1;
 }
 
-int check_similar(string a, string b) // Проверка слов на сходство (А - Словарное слово, B - Проверяемое слово)
+int check_similar(string a, string b) // ГЏГ°Г®ГўГҐГ°ГЄГ  Г±Г«Г®Гў Г­Г  Г±ГµГ®Г¤Г±ГІГўГ® (ГЂ - Г‘Г«Г®ГўГ Г°Г­Г®ГҐ Г±Г«Г®ГўГ®, B - ГЏГ°Г®ГўГҐГ°ГїГҐГ¬Г®ГҐ Г±Г«Г®ГўГ®)
 {
     int inserted = 0;
     int deleted = 0;
@@ -40,12 +40,12 @@ int check_similar(string a, string b) // Проверка слов на сходство (А - Словарно
         if (get_letter(a,i_a) != get_letter(b,i_b))
         {
             
-            if (get_letter(a, i_a) == get_letter(b, i_b + 1)) // Если буква вставлена
+            if (get_letter(a, i_a) == get_letter(b, i_b + 1)) // Г…Г±Г«ГЁ ГЎГіГЄГўГ  ГўГ±ГІГ ГўГ«ГҐГ­Г 
             {
                 inserted++;
                 i_b++;
             }
-            else if (get_letter(a, i_a + 1) == get_letter(b, i_b)) // Если буква удалена
+            else if (get_letter(a, i_a + 1) == get_letter(b, i_b)) // Г…Г±Г«ГЁ ГЎГіГЄГўГ  ГіГ¤Г Г«ГҐГ­Г 
             {
                 deleted++;
                 i_a++;
@@ -53,28 +53,11 @@ int check_similar(string a, string b) // Проверка слов на сходство (А - Словарно
            
 
             
-            else if (get_letter(b, i_b) == -1) // Если букв в слове из словаря больше чем в проверяемом
+            else if (get_letter(b, i_b) == -1) // Г…Г±Г«ГЁ ГЎГіГЄГў Гў Г±Г«Г®ГўГҐ ГЁГ§ Г±Г«Г®ГўГ Г°Гї ГЎГ®Г«ГјГёГҐ Г·ГҐГ¬ Гў ГЇГ°Г®ГўГҐГ°ГїГҐГ¬Г®Г¬
             {
                 deleted++;
             }
-            else if (abs(size_a - size_b) == 2)
-            {
-                if (get_letter(a, i_a + 2) == get_letter(b, i_b)) // Если пара удалений
-                {
-                    deleted++;
-                    deleted++;
-                    i_a++;
-                    i_a++;
-                }
-                else if (get_letter(a, i_a) == get_letter(b, i_b + 2)) // Если пара вставок
-                {
-                    inserted++;
-                    inserted++;
-                    i_b++;
-                    i_b++;
-                }
-            }
-            else // Если замена буквы - (abc -> arc)
+            else // Г…Г±Г«ГЁ Г§Г Г¬ГҐГ­Г  ГЎГіГЄГўГ» - (abc -> arc)
             {
                 deleted++;
                 inserted++;
@@ -88,7 +71,7 @@ int check_similar(string a, string b) // Проверка слов на сходство (А - Словарно
     return deleted + inserted;
 }
 
-void find_similar() // Поиск слов в dictionary, похожих на words[j]
+void find_similar() // ГЏГ®ГЁГ±ГЄ Г±Г«Г®Гў Гў dictionary, ГЇГ®ГµГ®Г¦ГЁГµ Г­Г  words[j]
 {
     for (int j = 0; j < words.size(); ++j)
     {
@@ -111,7 +94,7 @@ void find_similar() // Поиск слов в dictionary, похожих на words[j]
 
         }
 
-        // Вывод результатов
+        // Г‚Г»ГўГ®Г¤ Г°ГҐГ§ГіГ«ГјГІГ ГІГ®Гў
         if (result_output.empty())
             cout << "{ " << words[j] << "? } ";
         else if (result_output.size() == 1)
